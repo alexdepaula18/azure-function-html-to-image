@@ -7,7 +7,7 @@ module.exports = async function (context, req) {
     if (req.body && req.body.htmlBase64) {
 
         let buff = new Buffer(req.body.htmlBase64, 'base64');
-        let text = buff.toString('ascii');
+        let text = buff.toString('utf8');
 
         await nodeHtmlToImage({
             output: './image.png',
